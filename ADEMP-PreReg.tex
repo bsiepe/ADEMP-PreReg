@@ -52,7 +52,7 @@
   title=Example,
   sharp corners,
   boxrule=0.5pt,
-  coltitle=black,
+  coltitle=black
 }
 
 \title{ADEMP-PreReg \\ Template for Simulation Studies}
@@ -61,6 +61,7 @@
 \begin{document}
 \begin{titlepage}
     \maketitle
+    \thispagestyle{empty}
     \vfill
     \centering
     Version: 0.42 \\
@@ -76,7 +77,7 @@
 
 \section{Instructions}
 \subsection*{General Information}
-This template can be used to plan and/or pre-register Monte Carlo simulation studies according to the \textit{ADEMP} framework \parencite{Morris2019}. The preprint associated with this template is available at (**citation**). Alternative Google Docs and Word versions of this template are available at (\url{https://github.com/bsiepe/ADEMP-PreReg}). To time-stamp your protocol, we recommend uploading it to the Open Science Framework (\url{https://osf.io/}) or Zenodo (\url{https://zenodo.org/}). When using this template, please cite the associated preprint \parencite{Siepe2023}. If you have any questions or suggestions for improving the template, please contact us via the ways described at (\url{https://github.com/bsiepe/ADEMP-PreReg}). \\
+This template can be used to plan and/or pre-register Monte Carlo simulation studies according to the \textit{ADEMP} framework \parencite{Morris2019}. The preprint associated with this template is \parencite{Siepe2023}. Alternative Google Docs and Word versions of this template are available at (\url{https://github.com/bsiepe/ADEMP-PreReg}). To time-stamp your protocol, we recommend uploading it to the Open Science Framework (\url{https://osf.io/}) or Zenodo (\url{https://zenodo.org/}). When using this template, please cite the associated preprint \parencite{Siepe2023}. If you have any questions or suggestions for improving the template, please contact us via the ways described at (\url{https://github.com/bsiepe/ADEMP-PreReg}). \\
 
 \subsection*{Using this template}
 Please provide detailed answers to each of the questions. If you plan to perform multiple simulation studies within the same project, you can either register them separately or number your answers to each question with an indicator for each study. As the planning and execution of simulation studies often involves considerable complexity and unknowns, it may be difficult to answer all the questions in this template or some changes may be made along the analysis pathway. This is to be expected and should not deter from preregistering a simulation study; rather, any modifications to the protocol should simply be reported transparently along with a justification, which will ultimately add credibility to your research.
@@ -231,6 +232,13 @@ where $\theta$ is the true treatment effect and $\hat{\theta}_i$ is the effect e
 where $S_{\hat{\theta}} = \sqrt{\sum_{i=1}^{n_{\text{sim}}}{ \{\hat{\theta}_i - (\sum_{i=1}^{n_{\text{sim}}}\hat{\theta}_i/n_{\text{sim}})\}^2}/(n_{\text{sim}} - 1)}$ is the sample standard deviation of the effect estimates.
 \end{examplebox}
 
+\subsection{How will Monte Carlo uncertainty of the estimated performance measures be calculated and reported?}
+
+\textit{Explanation:} Ideally, Monte Carlo uncertainty can be reported in the form of Monte Carlo Standard Errors (MCSEs). Please see \textcite{Siepe2023} and \textcite{Morris2019} for a list of formulae to calculate the MCSE related to common performance measures, more accurate jackknife-based MCSEs are available through the \texttt{rsimsum} \parencite{Gasparini2018} and \texttt{simhelpers} \parencite{Simhelpers2022} R packages, the \texttt{SimDesign} \parencite{Chalmers2020} R package can compute confidence intervals for performance measures via bootstrapping. Monte Carlo uncertainty can additionally be visualized using plots appropriate for illustrating variability, such as MCSE error bars, histograms, boxplots, or violin plots of performance measure estimates, if possible (e.g., bias).
+
+\begin{examplebox}
+We will report Monte Carlo uncertainty in tables (MCSEs next to the estimated performance measures) and in plots (error bars with $\pm 1$MCSE around estimated performance measures). We will use the formulas provided in \textcite{Siepe2023} to calculate MCSEs, see our answer to the last question.
+\end{examplebox}
 
 \subsection{How many simulation repetitions will be used for each condition?}
 
@@ -243,13 +251,7 @@ For illustration, we also determined the required number of repetitions to achie
 \end{examplebox}
 
 
-\subsection{How will Monte Carlo uncertainty be calculated and reported?}
 
-\textit{Explanation:} Ideally, Monte Carlo uncertainty can be reported in the form of Monte Carlo Standard Errors (MCSEs). Please see \textcite{Siepe2023} and \textcite{Morris2019} for a list of formulae to calculate the MCSE related to common performance measures, more accurate jackknife-based MCSEs are available through the \texttt{rsimsum} \parencite{Gasparini2018} and \texttt{simhelpers} \parencite{Simhelpers2022} R packages, the \texttt{SimDesign} \parencite{Chalmers2020} R package can compute confidence intervals for performance measures via bootstrapping. Monte Carlo uncertainty can additionally be visualized using plots appropriate for illustrating variability, such as MCSE error bars, histograms, boxplots, or violin plots of performance measure estimates, if possible (e.g., bias).
-
-\begin{examplebox}
-We will report Monte Carlo uncertainty in tables (MCSEs next to the estimated performance measures) and in plots (error bars with $\pm 1$MCSE around estimated performance measures). We will use the formulas provided in \textcite{Siepe2023} to calculate MCSEs, see our answer to the last question.
-\end{examplebox}
 
 \subsection{How will missing values due to non-convergence or other reasons be handled?}
 

@@ -1,4 +1,4 @@
-all: pdf clean docx odt
+all: pdf clean docx
 
 pdf: ADEMP-PreReg.tex bibliography.bib
 	pdflatex ADEMP-PreReg
