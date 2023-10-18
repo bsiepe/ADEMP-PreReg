@@ -10,11 +10,12 @@ There are multiple options to use the ADEMP-PreReg template:
 3. Use the LaTeX version in this repository (NAME)
 
 After filling out your preferred version of the template, you can upload and timestamp your preregistration at the service of your choice, for example at the (Open Science Framework)[https://help.osf.io/article/158-create-a-preregistration] or (Zenodo)[https://zenodo.org/].  
-A brief example of a full protocol using ADEMP Pre-Reg can be found in the folder `/example/`. We will add further examples to this repository after researchers have used the template.
+A brief example of a full protocol using ADEMP Pre-Reg can be found in the folder `/example-protocol/`. We will add further examples to this repository after researchers have used the template.
 
 
 ## Feedback
-If you have any questions, criticism, or feedback on the template, please feel free to open an Issue or a Pull Request in this repository. If you do not wish to do that, you can also contact us at bjoernsiepe@gmail.com.
+We hope to continuously improve the template and invite interested researchers to suggest improvements to the template. Please feel free to open an Issue or a Pull Request in this repository to voice any questions, criticism, or feedback on the template. If you do not wish to do that, you can also contact us at bjoernsiepe@gmail.com.
+
 
 
 ## Citation
