@@ -9,7 +9,9 @@ pdf: ADEMP-PreReg.tex bibliography.bib
 # make sure that pandoc and pandoc-citeproc are installed
 # e.g., in Ubuntu: sudo apt install pandoc pandoc-citeproc
 docx: ADEMP-PreReg.tex bibliography.bib
-	pandoc --bibliography=bibliography.bib --reference-doc reference.docx -o ADEMP-PreReg.docx ADEMP-PreReg.tex
+	sed 's/\\begin{examplebox}/\\begin{examplebox}\\textit{Example:}/g' ADEMP-PreReg.tex > temp.tex
+	pandoc --bibliography=bibliography.bib --reference-doc reference.docx -o ADEMP-PreReg.docx temp.tex
+	rm temp.tex
 
 odt: ADEMP-PreReg.tex bibliography.bib
 	pandoc --bibliography=bibliography.bib -o ADEMP-PreReg.odt ADEMP-PreReg.tex
