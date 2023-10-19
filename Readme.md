@@ -10,6 +10,7 @@ There are multiple options to use the ADEMP-PreReg template:
 3. Use the LaTeX version in this repository (`ADEMP-PreReg.tex`). We are currently also submitting the `.tex` file as an Overleaf template for easier use. 
 
 After filling out your preferred version of the template, you can upload and timestamp your preregistration at the service of your choice, for example, at the [Open Science Framework](https://help.osf.io/article/158-create-a-preregistration) or [Zenodo](https://zenodo.org/).
+When using the Open Science Framework, you may, for example, upload the template as part of the open-ended OSF registration (see [here](https://osf.io/zab38/wiki/home/)). 
 
 ## Gallery 
 A brief example of a full protocol using ADEMP-PreReg is included in the template itself. We will add further examples to this repository after researchers have used the template.
