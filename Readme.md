@@ -31,7 +31,7 @@ A BibTeX entry is given by
 ```BibTeX
 @article{Siepe2023,
   year = {2023},
-  author = {Bj{\"o}rn S. Siepe and Franti{\v{s}}ek Barto{\v{s}} and Samuel Pawel},
+  author = {Bj{\"o}rn S. Siepe and Franti{\v{s}}ek Barto{\v{s}} and Tim P. Morris and Anne-Laure Boulesteix and Daniel W. Heck and Samuel Pawel},
   title = {Simulation Studies for Methodological Research in Psychology: A Standardized Template for Planning, Preregistration, and Reporting},
   note = {Preprint},
   doi = {XXXX}
