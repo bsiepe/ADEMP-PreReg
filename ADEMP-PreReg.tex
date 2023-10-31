@@ -67,7 +67,7 @@
     \vfill
     \centering
     Version: 0.1.0 \\
-    Last updated: \today \\ % TODO hardcode date before publishing
+    Last updated: 2023-10-31 \\
     Preregistration template designed by \\
     Björn S. Siepe, František Bartoš, and Samuel Pawel \\
     \vfill
@@ -145,7 +145,7 @@ In each simulation repetition, we generate $n=50$ pre--post measurements in the 
     \label{eq:bivariateNormal}
     \left[\begin{array}{c}Y_1 \\ Y_2 \end{array}\right] \sim\text{N}\left(\left[\begin{array}{c}0 \\ \mu_{g,2} \end{array}\right],\left[\begin{array}{cc} 1 & \rho  \\ \rho & 1 \end{array}\right]\right),
 \end{equation}
-where the first argument of the normal distribution in~\eqref{eq:bivariateNormal} is the mean vector and the second argument the covariance matrix.
+where the first argument of the normal distribution is the mean vector and the second argument the covariance matrix.
 The numerical subscript 1 indicates measurement time `pre' and 2 indicates `post'. The parameter $\mu_{g,2}$ denotes the post-treatment mean. It is fixed to zero in the control group (${\mu_{\text{control},2}} = 0$), whereas it is varied across simulation conditions in the experimental group. The parameter $\rho$ denotes the pre--post correlation and is also varied across simulation conditions.
 \end{examplebox}
 
@@ -197,7 +197,7 @@ We will vary the conditions in a fully factorial manner. This will result in \mb
 \textit{Explanation:} Please also specify if some targets are considered more important than others, i.e., if the simulation study will have primary and secondary outcomes.
 
 \begin{examplebox}
-Our primary target is the null hypothesis of no difference between the outcomes of the the control and treatment groups. Our secondary estimand is the treatment effect size defined as the expected difference between the control and the experimental group measurements at time-point two
+Our primary target is the null hypothesis of no difference between the outcomes of the control and treatment groups. Our secondary estimand is the treatment effect size defined as the expected difference between the control and the experimental group measurements at time-point two
 \begin{align*}
     \text{E}(Y_2 \mid g=\text{exp}) - \text{E}(Y_2 \mid g=\text{control}),
 \end{align*}

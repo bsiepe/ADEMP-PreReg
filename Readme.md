@@ -24,7 +24,7 @@ To modify the template and open a Pull Request, please modify the `ADEMP-PreReg.
 ## Citation
 When you use our template, please cite the associated preprint
 
-Siepe, B. S., Bartoš, F., Morris, T.P., Boulesteix, A-L, Heck, D.W. & Pawel, S. (2023). Simulation studies for methodological research in psychology: A standardized template for planning, preregistration, and reporting [Preprint].
+Siepe, B. S., Bartoš, F., Morris, T.P., Boulesteix, A-L, Heck, D.W. & Pawel, S. (2023). Simulation studies for methodological research in psychology: A standardized template for planning, preregistration, and reporting [Preprint]. <https://doi.org/10.31234/osf.io/ufgy6>
 
 A BibTeX entry is given by
 
@@ -34,6 +34,6 @@ A BibTeX entry is given by
   author = {Bj{\"o}rn S. Siepe and Franti{\v{s}}ek Barto{\v{s}} and Tim P. Morris and Anne-Laure Boulesteix and Daniel W. Heck and Samuel Pawel},
   title = {Simulation Studies for Methodological Research in Psychology: A Standardized Template for Planning, Preregistration, and Reporting},
   note = {Preprint},
-  doi = {XXXX}
+  doi = {10.31234/osf.io/ufgy6}
 }
 ```
