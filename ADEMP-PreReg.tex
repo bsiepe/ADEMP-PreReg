@@ -69,7 +69,7 @@
     Version: 0.1.0 \\
     Last updated: 2023-10-31 \\
     Preregistration template designed by \\
-    Björn S. Siepe, František Bartoš, and Samuel Pawel \\
+    Björn S. Siepe, František Bartoš, Tim P. Morris, Anne-Laure Boulesteix, Daniel W. Heck, and Samuel Pawel \\
     \vfill
 \end{titlepage}
 
@@ -79,7 +79,7 @@
 
 \section{Instructions}
 \subsection*{General Information}
-This template can be used to plan and/or preregister Monte Carlo simulation studies according to the \textit{ADEMP} framework \parencite{Morris2019}. The preprint associated with this template is \parencite{Siepe2023}. Alternative Google Docs and Word versions of this template are available at (\url{https://github.com/bsiepe/ADEMP-PreReg}). To time-stamp your protocol, we recommend uploading it to the Open Science Framework (\url{https://osf.io/}) or Zenodo (\url{https://zenodo.org/}). When using this template, please cite the associated preprint \parencite{Siepe2023}. If you have any questions or suggestions for improving the template, please contact us via the ways described at (\url{https://github.com/bsiepe/ADEMP-PreReg}). \\
+This template can be used to plan and/or preregister Monte Carlo simulation studies according to the ADEMP framework \parencite{Morris2019}. The preprint associated with this template is \parencite{Siepe2023}. Alternative Google Docs and Word versions of this template are available at (\url{https://github.com/bsiepe/ADEMP-PreReg}). To time-stamp your protocol, we recommend uploading it to the Open Science Framework (\url{https://osf.io/}) or Zenodo (\url{https://zenodo.org/}). When using this template, please cite the associated preprint \parencite{Siepe2023}. If you have any questions or suggestions for improving the template, please contact us via the ways described at (\url{https://github.com/bsiepe/ADEMP-PreReg}). \\
 
 \subsection*{Using this template}
 Please provide detailed answers to each of the questions. If you plan to perform multiple simulation studies within the same project, you can either register them separately or number your answers to each question with an indicator for each study. As the planning and execution of simulation studies often involves considerable complexity and unknowns, it may be difficult to answer all the questions in this template or some changes may be made along the analysis pathway. This is to be expected and should not deter from preregistering a simulation study; rather, any modifications to the protocol should simply be reported transparently along with a justification, which will ultimately add credibility to your research. Finally, the template can also be used as a blueprint for the reporting of non-preregistered simulation studies.
@@ -215,21 +215,18 @@ for which the true value is given by the parameter $\mu_{\text{exp},2}$ for the 
 We will compare the following methods:
     \begin{itemize}
     \item[1)] \textbf{ANCOVA} (ANalysis of COVAriance): A regression of the post-treatment measurement using the pre-treatment measurement and the treatment indicator as covariates,
-    %of the difference between the treatment and control condition in the post-treatment measurement adjusting for the pre-treatment measurement,
     which is specified in R as
     \begin{verbatim}
         lm(post ~ pre + treatment)
     \end{verbatim}
 
     \item[2)] \textbf{Change score analysis}: A regression of the difference between post-treatment and pre-treatment measurement using the treatment indicator as covariate,
-    %of the difference between the treatment and control condition of the within-subject differences in the pre- and post-treatment measurement,
     which is specified in R as
     \begin{verbatim}
         lm(post ~ offset(pre) + treatment)
     \end{verbatim}
 
     \item[3)] \textbf{Post score analysis}: A regression of the post-treatment measurement using the treatment indicator as covariate,
-    %of the difference between the treatment and control condition in the post-treatment measurement,
     which is specified in R as
     \begin{verbatim}
         lm(post ~ treatment)
