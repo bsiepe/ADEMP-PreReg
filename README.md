@@ -7,7 +7,7 @@ ADEMP-PreReg is a general-purpose preregistration template for Monte Carlo simul
 ## How to use it?
 There are multiple options to use the ADEMP-PreReg template:
 
-1. Use the Google Docs version [here](https://docs.google.com/document/d/1Tgjtaj9sto6UbVD2A70aLiCBX5I5Poj4/edit?usp=sharing&ouid=118438016191034970644&rtpof=true&sd=true)
+1. Use the Google Docs version [here](https://docs.google.com/document/d/1-cpsQYGrgrui6tn7NZKqt9iiZO0teMZkMqWVVxIr3DY/edit?usp=sharing)
 2. Use the .docx version in this repository (`ADEMP-PreReg.docx`)
 3. Use the LaTeX version in this repository (`ADEMP-PreReg.tex` and `configuration.tex`) or on [Overleaf](https://www.overleaf.com/latex/templates/ademp-prereg-simulation-study-template/dkhtxjtmpbfj).
 
@@ -26,7 +26,7 @@ To modify the template and open a Pull Request, please modify the `ADEMP-PreReg.
 ## Citation
 When you use our template, please cite the associated publication
 
-Siepe, B. S., Bartoš, F., Morris, T.P., Boulesteix, A-L, Heck, D.W. & Pawel, S. (2024). Simulation studies for methodological research in psychology: A standardized template for planning, preregistration, and reporting. _Psychological Methods_. <https://doi.org/10.1037/met0000695>
+Siepe, B. S., Bartoš, F., Morris, T.P., Boulesteix, A-L, Heck, D.W. & Pawel, S. (2024). Simulation Studies for Methodological Research in Psychology: A Standardized Template for Planning, Preregistration, and Reporting. _Psychological Methods_. <https://doi.org/10.1037/met0000695>
 
 A BibTeX entry is given by
 
