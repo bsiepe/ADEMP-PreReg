@@ -1,0 +1,109 @@
+\usepackage[english]{babel}
+
+\title{\textbf{\textsf{ADEMP-PreReg \\ Template for Simulation Studies}}}
+\date{\today}
+\author{}
+
+% math
+\usepackage{amsmath, amssymb}
+
+% references
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+% fonts
+\usepackage{helvet}
+\usepackage{sectsty}
+\allsectionsfont{\sffamily} % for section titltes use sans-serif
+% \renewcommand{\familydefault}{\sfdefault} % comment out for sans-serif font
+% \usepackage{sansmath} % comment out for sans-serif math font
+% \sansmath % comment out for sans-serif math font
+
+% margins
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  total={170mm,257mm},
+  left=25mm,
+  right=25mm,
+  top=30mm,
+  bottom=30mm,
+}
+
+% no indentation when a new paragraph starts
+\setlength{\parindent}{0cm}
+
+% links
+\usepackage{hyperref} % better links
+\usepackage{color}    % nicer link colors
+\definecolor{pigment}{rgb}{0.2, 0.2, 0.6}
+\hypersetup{
+  colorlinks = true, % Color links instead of ugly boxes
+  urlcolor   = pigment, % Color for external hyperlinks
+  linkcolor  = black, % Color for internal links
+  citecolor  = pigment % Color for citations
+}
+
+% headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{ADEMP-PreReg Template for Simulation Studies}
+\chead{}
+\rhead{}
+
+% example boxes
+\usepackage{tcolorbox}
+\newtcolorbox{examplebox}{
+  colback=white,
+  colframe=gray!30,
+  title=Example,
+  sharp corners,
+  boxrule=0.5pt,
+  coltitle=black
+}
+
+% conditionals
+\usepackage{ifthen}
+\newboolean{showinstructions}
+\newboolean{showexamples}
+\newboolean{showexplanations}
+\renewenvironment{examplebox}{%
+  \ifthenelse{\boolean{showexamples}}%
+    {\begin{tcolorbox}[colback=white, colframe=gray!30, title=Example, sharp corners, boxrule=0.5pt, coltitle=black]}%
+    {\expandafter\comment}%
+}{%
+  \ifthenelse{\boolean{showexamples}}%
+    {\end{tcolorbox}}%
+    {\expandafter\endcomment}%
+}
+
+% Define a new environment for explanations
+\newcommand{\explanation}[1]{%
+  \ifthenelse{\boolean{showexplanations}}%
+    {\textit{Explanation:} #1}%
+    {\ignorespaces}%
+}
+
+% Define a new environment for instructions
+\newcommand{\instructions}[1]{%
+  \ifthenelse{\boolean{showinstructions}}%
+    {#1}%
+    {\ignorespaces}%
+}
+
+\makeatletter
+\newcommand{\maketitlepage}{%
+    \begin{titlepage}
+        \maketitle
+        \thispagestyle{empty}
+        \vfill
+        \centering
+        Version: 1.0 \\
+        Last updated: 2024-10-10 \\
+        Template based on the paper: \\
+        Siepe, B. S., Bartoš, F., Morris, T. P., Boulesteix, A.-L., Heck, D. W., \& Pawel, S. (2024). Simulation studies for methodological research in psychology: A standardized structure for planning, preregistration, and reporting. \textit{Psychological Methods}. \url{https://doi.org/10.1037/met0000695}, \url{https://doi.org/10.31234/osf.io/ufgy6}
+        \vfill
+    \end{titlepage}
+    \newpage
+}
+\makeatother

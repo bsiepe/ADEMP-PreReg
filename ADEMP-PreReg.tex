@@ -1,95 +1,29 @@
 \documentclass[12pt]{article}
-\usepackage[english]{babel}
 
-% math
-\usepackage{amsmath, amssymb}
+% refer to configurations.tex for the LaTeX setup of this template
+\input{configurations.tex}
 
-% references
-\usepackage[style=apa, backend=biber]{biblatex}
-\addbibresource{bibliography.bib}
-
-% fonts
-\usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}
-\usepackage{sansmath}
-\sansmath
-
-% margins
-\usepackage{geometry}
-\geometry{
-  a4paper,
-  total={170mm,257mm},
-  left=25mm,
-  right=25mm,
-  top=30mm,
-  bottom=30mm,
-}
-
-% no indentation when a new paragraph starts
-\setlength{\parindent}{0cm}
-
-% links
-\usepackage{hyperref} % better links
-\usepackage{color}    % nicer link colors
-\definecolor{pigment}{rgb}{0.2, 0.2, 0.6}
-\hypersetup{
-  colorlinks   = true, % Color links instead of ugly boxes
-  urlcolor     = pigment, % Color for external hyperlinks
-  linkcolor    = black, % Color for internal links
-  citecolor   = pigment % Color for citations
-}
-
-% headers
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\lhead{ADEMP-PreReg Template for Simulation Studies}
-\chead{}
-\rhead{}
-
-% example boxes
-\usepackage{tcolorbox}
-\newtcolorbox{examplebox}{
-  colback=white,
-  colframe=gray!30,
-  title=Example,
-  sharp corners,
-  boxrule=0.5pt,
-  coltitle=black
-}
-
-\title{ADEMP-PreReg \\ Template for Simulation Studies}
-\date{\today}
+% Optional user settings
+\setboolean{showinstructions}{true} % Change to false to hide instructions
+\setboolean{showexamples}{true} % Change to false to hide examples
+\setboolean{showexplanations}{true} % Change to false to hide explanations
 
 \begin{document}
-\begin{titlepage}
-    \maketitle
-    \thispagestyle{empty}
-    \vfill
-    \centering
-    Version: 0.1.0 \\
-    Last updated: 2023-10-31 \\
-    Preregistration template designed by \\
-    Björn S. Siepe, František Bartoš, Tim P. Morris, Anne-Laure Boulesteix, Daniel W. Heck, and Samuel Pawel \\
-    \vfill
-\end{titlepage}
+\maketitlepage
 
-\newpage
-
-
-
-\section{Instructions}
+\instructions{\section{Instructions}
 \subsection*{General Information}
-This template can be used to plan and/or preregister Monte Carlo simulation studies according to the ADEMP framework \parencite{Morris2019}. The preprint associated with this template is \parencite{Siepe2023}. Alternative Google Docs and Word versions of this template are available at (\url{https://github.com/bsiepe/ADEMP-PreReg}). To time-stamp your protocol, we recommend uploading it to the Open Science Framework (\url{https://osf.io/}) or Zenodo (\url{https://zenodo.org/}). When using this template, please cite the associated preprint \parencite{Siepe2023}. If you have any questions or suggestions for improving the template, please contact us via the ways described at (\url{https://github.com/bsiepe/ADEMP-PreReg}). \\
+This template can be used to plan and/or preregister Monte Carlo simulation studies according to the ADEMP framework \parencite{Morris2019}. The publication associated with this template is \parencite{Siepe2024}. Alternative Google Docs and Word versions of this template are available at (\url{https://github.com/bsiepe/ADEMP-PreReg}). To time-stamp your protocol, we recommend uploading it to the Open Science Framework (\url{https://osf.io/}) or Zenodo (\url{https://zenodo.org/}). When using this template, please cite the associated article \parencite{Siepe2024}. If you have any questions or suggestions for improving the template, please contact us via the ways described at (\url{https://github.com/bsiepe/ADEMP-PreReg}). For \LaTeX{} users of this template, we provide simple commands to exclude the instructions, explanations, and example boxes from their compiled document.  \\
 
 \subsection*{Using this template}
 Please provide detailed answers to each of the questions. If you plan to perform multiple simulation studies within the same project, you can either register them separately or number your answers to each question with an indicator for each study. As the planning and execution of simulation studies often involves considerable complexity and unknowns, it may be difficult to answer all the questions in this template or some changes may be made along the analysis pathway. This is to be expected and should not deter from preregistering a simulation study; rather, any modifications to the protocol should simply be reported transparently along with a justification, which will ultimately add credibility to your research. Finally, the template can also be used as a blueprint for the reporting of non-preregistered simulation studies.
-
+}
 
 \section{General Information}
 \subsection{What is the title of the project?}
 
 \begin{examplebox}
-    Evaluating methods for the analysis of pre--post measurement experiments
+Evaluating methods for the analysis of pre--post measurement experiments
 \end{examplebox}
 
 \textit{Answer:}
@@ -104,7 +38,7 @@ Please provide detailed answers to each of the questions. If you plan to perform
 
 \subsection{Provide a description of the project.}
 
-\textit{Explanation:} This can also include empirical examples that will be analyzed within the same project, especially if the analysis depends on the results of the simulation.
+\explanation{This can also include empirical examples that will be analyzed within the same project, especially if the analysis depends on the results of the simulation.}
 
 \begin{examplebox}
     We will investigate the performance of different methods for analyzing data from pre--post measurement experiments. We will conduct a single simulation study varying the treatment effect and the pre--post measure correlation. We will compare three different methods (ANCOVA, change score analysis, and post score analysis) using power and type I error rate related to the hypothesis test of no effect, and bias related to the effect estimate (in an actual simulation study aimed at evaluating estimation of the effect size, a performance measure assessing variance, i.e., empirical standard error, would be also recommended).
@@ -114,7 +48,7 @@ Please provide detailed answers to each of the questions. If you plan to perform
 
 \subsection{Did any of the contributors already conduct related simulation studies on this specific question?}
 
-\textit{Explanation:} This includes preliminary simulations in the context of the current project.
+\explanation{This includes preliminary simulations in the context of the current project.}
 
 \begin{examplebox}
     We did not conduct previous simulation studies for pre--post measurement experiments but we were inspired by the previous literature on the topic \parencite{vickers2001use, senn2006change, van2013ancova, clifton2019correlation, ludtke2023ancova}.
@@ -125,7 +59,7 @@ Please provide detailed answers to each of the questions. If you plan to perform
 \section{Aims}
 \subsection{What is the aim of the simulation study?}
 
-\textit{Explanation:} The aim of a simulation study refers to the goal of the research and shapes subsequent choices. Aims are typically related to evaluating the properties of a method (or multiple methods) with respect to a particular statistical task. Possible tasks include `estimation', `hypothesis testing', `model selection', `prediction', or `design'. If possible, try to be specific and not merely state that the aim is to `investigate the performance of method \textit{X} under different circumstances'.
+\explanation{The aim of a simulation study refers to the goal of the research and shapes subsequent choices. Aims are typically related to evaluating the properties of a method (or multiple methods) with respect to a particular statistical task. Possible tasks include `estimation', `hypothesis testing', `model selection', `prediction', or `design'. If possible, try to be specific and not merely state that the aim is to `investigate the performance of method \textit{X} under different circumstances'.}
 
 \begin{examplebox}
 The aim of the simulation study is to evaluate different methods for analyzing data from pre--post measurement experiments with respect to their hypothesis testing and estimation characteristics.
@@ -137,7 +71,7 @@ The aim of the simulation study is to evaluate different methods for analyzing d
 \section{Data-Generating Mechanism}
 \subsection{How will the parameters for the data-generating mechanism (DGM) be specified?}
 
-\textit{Explanation:} Answers include `parametric based on real data', `parametric', or `resampled'. Parametric based on real data usually refers to fitting a model to real data and using the parameters of that model to simulate new data. Parametric refers to generating data from a known model or distribution, which may be specified based on theoretical or statistical knowledge, intuition, or to test extreme values. Resampled refers to resampling data from a certain data set, in which case the true data-generating mechanism is unknown. The answer to this question may include an explanation of from which distributions (with which parameters) values are drawn, or code used to generate parameter values. If the DGM parameters are based on real data, please provide information on the data set they are based on and the model used to obtain the parameters. Also, indicate if any of the authors are already familiar with the data set, e.g., analyzed (a subset of) it.
+\explanation{Answers include `parametric based on real data', `parametric', or `resampled'. Parametric based on real data usually refers to fitting a model to real data and using the parameters of that model to simulate new data. Parametric refers to generating data from a known model or distribution, which may be specified based on theoretical or statistical knowledge, intuition, or to test extreme values. Resampled refers to resampling data from a certain data set, in which case the true data-generating mechanism is unknown. The answer to this question may include an explanation of from which distributions (with which parameters) values are drawn, or code used to generate parameter values. If the DGM parameters are based on real data, please provide information on the data set they are based on and the model used to obtain the parameters. Also, indicate if any of the authors are already familiar with the data set, e.g., analyzed (a subset of) it.}
 
 \begin{examplebox}
 In each simulation repetition, we generate $n=50$ pre--post measurements in the control group ($g = \text{control}$) and $n = 50$ pre--post measurements in the experimental group ($g = \text{exp}$) from a bivariate normal distribution
@@ -153,7 +87,7 @@ The numerical subscript 1 indicates measurement time `pre' and 2 indicates `post
 
 \subsection{What will be the different factors of the data-generating mechanism?}
 
-\textit{Explanation:} A factor can be a parameter/setting/process/etc. that determines the data-generating mechanism and is varied across simulation conditions.
+\explanation{A factor can be a parameter/setting/process/etc. that determines the data-generating mechanism and is varied across simulation conditions.}
 
 \begin{examplebox}
 We will vary the following factors:
@@ -167,7 +101,7 @@ We will vary the following factors:
 
 \subsection{If possible, provide specific factor values for the DGM as well as additional simulation settings.}
 
-\textit{Explanation:} This may include a justification of the chosen values and settings.
+\explanation{This may include a justification of the chosen values and settings.}
 
 \begin{examplebox}
 We will use the following values for our data-generating mechanism:
@@ -182,10 +116,10 @@ We selected these specific values for the post-treatment mean in the experimenta
 
 \subsection{If there is more than one factor: How will the factor levels be combined and how many simulation conditions will this create?}
 
-\textit{Explanation:}  Answers include `fully factorial', `partially factorial', `one-at-a-time', or `scattershot'. Fully factorial designs are designs in which all possible factor combinations are considered. Partially factorial designs denote designs in which only a subset of all possible factor combinations are used. One-at-a-time designs are designs where each factor is varied while the others are kept fixed at a certain value. Scattershot designs include distinct scenarios, for example, based on parameter values from real-world data.
+\explanation{Answers include `fully factorial', `partially factorial', `one-at-a-time', or `scattershot'. Fully factorial designs are designs in which all possible factor combinations are considered. Partially factorial designs denote designs in which only a subset of all possible factor combinations are used. One-at-a-time designs are designs where each factor is varied while the others are kept fixed at a certain value. Scattershot designs include distinct scenarios, for example, based on parameter values from real-world data.}
 
 \begin{examplebox}
-We will vary the conditions in a fully factorial manner. This will result in \mbox{3 (post-treatment mean in experimental group)} $\times$ 3 (pre--post measurement correlation) = 9 simulation conditions.
+We will vary the conditions in a fully factorial manner. This will result in\\ \mbox{3 (post-treatment mean in experimental group)} $\times$ 3 (pre--post measurement correlation) = 9 simulation conditions.
 \end{examplebox}
 
 \textit{Answer:}
@@ -194,7 +128,7 @@ We will vary the conditions in a fully factorial manner. This will result in \mb
 \section{Estimands and Targets}
 \subsection{What will be the estimands and/or targets of the simulation study?}
 
-\textit{Explanation:} Please also specify if some targets are considered more important than others, i.e., if the simulation study will have primary and secondary outcomes.
+\explanation{Please also specify if some targets are considered more important than others, i.e., if the simulation study will have primary and secondary outcomes.}
 
 \begin{examplebox}
 Our primary target is the null hypothesis of no difference between the outcomes of the control and treatment groups. Our secondary estimand is the treatment effect size defined as the expected difference between the control and the experimental group measurements at time-point two
@@ -209,7 +143,7 @@ for which the true value is given by the parameter $\mu_{\text{exp},2}$ for the 
 \section{Methods}
 \subsection{How many and which methods will be included and which quantities will be extracted?}
 
-\textit{Explanation:} Be as specific as possible regarding the methods that will be compared, and provide a justification for both the choice of methods and their model parameters. This can also include code which will be used to estimate the different methods or models in the simulation with all relevant model parameters. Setting different prior hyperparameters might also be regarded as using different methods.  Where package defaults are used, state this. Where they are not used, state what values are used instead.
+\explanation{Be as specific as possible regarding the methods that will be compared, and provide a justification for both the choice of methods and their model parameters. This can also include code which will be used to estimate the different methods or models in the simulation with all relevant model parameters. Setting different prior hyperparameters might also be regarded as using different methods. Where package defaults are used, state this. Where they are not used, state what values are used instead.}
 
 \begin{examplebox}
 We will compare the following methods:
@@ -234,7 +168,7 @@ We will compare the following methods:
 \end{itemize}
 Both change score and post score ANOVA can be seen as a special case of ANCOVA. Change score analysis fixes the \texttt{pre} coefficient to 1 (using the \texttt{offset()} function) and post score analysis omits the \texttt{pre} variable from the model (effectively fixing its coefficient to 0).
 
-From each fitted model, we will extract the estimated treatment effect, the associated standard error, and the associated two-sided Wald test \textit{p}-value for the null hypothesis of no effect. A rejection of the null hypothesis will be defined by a \textit{p}-value less than the conventional threshold of 0.05.
+From each fitted model, we will extract the estimated treatment effect, the associated standard error, and the associated two-sided $t$-test \textit{p}-value for the null hypothesis of no effect. A rejection of the null hypothesis will be defined by a \textit{p}-value less than the conventional threshold of 0.05.
 \end{examplebox}
 
 \textit{Answer:}
@@ -242,7 +176,7 @@ From each fitted model, we will extract the estimated treatment effect, the asso
 \section{Performance Measures}
 \subsection{Which performance measures will be used?}
 
-\textit{Explanation:} Please provide details on why they were chosen and on how these measures will be calculated. Ideally, provide formulas for the performance measures to avoid ambiguity. Some models in psychology, such as item response theory or time series models, often contain multiple parameters of interest, and their number may vary across conditions. With a large number of estimated parameters, their performance measures are often combined. If multiple estimates are aggregated, specify how this aggregation will be performed. For example, if there are multiple parameters in a particular condition, the mean of the individual biases of these parameters or the bias of each individual parameter may be reported.
+\explanation{Please provide details on why they were chosen and on how these measures will be calculated. Ideally, provide formulas for the performance measures to avoid ambiguity. Some models in psychology, such as item response theory or time series models, often contain multiple parameters of interest, and their number may vary across conditions. With a large number of estimated parameters, their performance measures are often combined. If multiple estimates are aggregated, specify how this aggregation will be performed. For example, if there are multiple parameters in a particular condition, the mean of the individual biases of these parameters or the bias of each individual parameter may be reported.}
 
 \begin{examplebox}
 Our primary performance measures are the type I error rate (in conditions where the true effect is zero) and the power (in conditions where the true effect is non-zero) to reject the null hypothesis of no difference between the control and treatment condition. The null hypothesis is rejected if the \textit{p}-value for the null hypothesis of no effect is less than or equal to the conventional threshold of 0.05. The rejection rate (the type I error rate or the power, depending on the data generating mechanism) is estimated by
@@ -268,20 +202,20 @@ where $S_{\hat{\theta}} = \sqrt{\sum_{i=1}^{n_{\text{sim}}}{ \{\hat{\theta}_i - 
 
 \subsection{How will Monte Carlo uncertainty of the estimated performance measures be calculated and reported?}
 
-\textit{Explanation:} Ideally, Monte Carlo uncertainty can be reported in the form of Monte Carlo Standard Errors (MCSEs). Please see \textcite{Siepe2023} and \textcite{Morris2019} for a list of formulae to calculate the MCSE related to common performance measures, more accurate jackknife-based MCSEs are available through the \texttt{rsimsum} \parencite{Gasparini2018} and \texttt{simhelpers} \parencite{Simhelpers2022} R packages, the \texttt{SimDesign} \parencite{Chalmers2020} R package can compute confidence intervals for performance measures via bootstrapping. Monte Carlo uncertainty can additionally be visualized using plots appropriate for illustrating variability, such as MCSE error bars, histograms, boxplots, or violin plots of performance measure estimates, if possible (e.g., bias).
+\explanation{Ideally, Monte Carlo uncertainty can be reported in the form of Monte Carlo Standard Errors (MCSEs). Please see \textcite{Siepe2024} and \textcite{Morris2019} for a list of formulae to calculate the MCSE related to common performance measures, more accurate jackknife-based MCSEs are available through the \texttt{rsimsum} \parencite{Gasparini2018} and \texttt{simhelpers} \parencite{Simhelpers2022} R packages, the \texttt{SimDesign} \parencite{Chalmers2020} R package can compute confidence intervals for performance measures via bootstrapping. Monte Carlo uncertainty can additionally be visualized using plots appropriate for illustrating variability, such as MCSE error bars, histograms, boxplots, or violin plots of performance measure estimates, if possible (e.g., bias).}
 
 \begin{examplebox}
-We will report Monte Carlo uncertainty in tables (MCSEs next to the estimated performance measures) and in plots (error bars with $\pm 1$MCSE around estimated performance measures). We will use the formulas provided in \textcite{Siepe2023} to calculate MCSEs, see our answer to the last question.
+We will report Monte Carlo uncertainty in tables (MCSEs next to the estimated performance measures) and in plots (error bars with $\pm 1$MCSE around estimated performance measures). We will use the formulas provided in \textcite{Siepe2024} to calculate MCSEs, see our answer to the last question.
 \end{examplebox}
 
 \textit{Answer:}
 
 \subsection{How many simulation repetitions will be used for each condition?}
 
-\textit{Explanation:} Please also indicate whether the chosen number of simulation repetitions is based on sample size calculations, on computational constraints, rules of thumb, or any other heuristic or combination of these strategies. Formulas for sample size planning in simulation studies are provided in \textcite{Siepe2023}. If there is a lack of knowledge on a quantity for computing the Monte Carlo standard error (MCSE) of an estimated performance measure (e.g., the variance of the estimator is needed to compute the MCSE for the bias), pilot simulations may be needed to obtain a guess for realistic/worst-case values.
+\explanation{Please also indicate whether the chosen number of simulation repetitions is based on sample size calculations, on computational constraints, rules of thumb, or any other heuristic or combination of these strategies. Formulas for sample size planning in simulation studies are provided in \textcite{Siepe2024}. If there is a lack of knowledge on a quantity for computing the Monte Carlo standard error (MCSE) of an estimated performance measure (e.g., the variance of the estimator is needed to compute the MCSE for the bias), pilot simulations may be needed to obtain a guess for realistic/worst-case values.}
 
 \begin{examplebox}
-We will perform 10,000 repetitions per condition. We determined this number by aiming for a MCSE of 0.005 for the type I error rate and the power under the worst case performance (50\% rejection rate: $0.50 \times (1 - 0.50) / 0.005^2 = 10{,}000$ repetitions).
+We will perform 10,000 repetitions per condition. We determined this number by aiming for a MCSE of 0.005 for the type I error rate and the power under the worst-case performance (50\% rejection rate: $0.50 \times (1 - 0.50) / 0.005^2 = 10{,}000$ repetitions).
 
 For illustration, we also determined the required number of repetitions to achieve a MCSE of 0.005 for the bias for each of the methods. The sample size calculation requires the empirical variance of the effect estimates $S_{\hat{\theta}}^2$ for each method. Since the empirical variances of the effect estimates can vary (pun intended) across simulation conditions, we compute the sample size using the largest estimated variance across all conditions. We obtain the empirical variance estimates for each condition and method using 100 pilot simulation runs. We found that the required sample sizes would be $S_{\hat{\theta}}^2/0.005^2 = 1{,}986$ for ANCOVA, $S_{\hat{\theta}}^2/0.005^2 = 3{,}812$ for change score analysis, and $S_{\hat{\theta}}^2/0.005^2 = 1{,}996$ for post score analysis.
 \end{examplebox}
@@ -293,7 +227,7 @@ For illustration, we also determined the required number of repetitions to achie
 
 \subsection{How will missing values due to non-convergence or other reasons be handled?}
 
-\textit{Explanation:} `Convergence' means that a method successfully produces the outcomes of interest (e.g., an estimate, a prediction, a \textit{p}-value, a sample size, etc.) that are required for estimating the performance measures. Non-convergence of some iterations or whole conditions of simulation studies occurs regularly, e.g., for numerical reasons. It is possible to impute non-converged iterations, exclude all non-converged iterations or to implement mechanisms that repeat certain parts of the simulation (such as data generation or model fitting) until convergence is achieved. Further, it is important to consider at which proportion of failed iterations a whole condition will be excluded from the analysis.
+\explanation{`Convergence' means that a method successfully produces the outcomes of interest (e.g., an estimate, a prediction, a \textit{p}-value, a sample size, etc.) that are required for estimating the performance measures. Non-convergence of some iterations or whole conditions of simulation studies occurs regularly, e.g., for numerical reasons. It is possible to impute non-converged iterations, exclude all non-converged iterations or to implement mechanisms that repeat certain parts of the simulation (such as data generation or model fitting) until convergence is achieved. Further, it is important to consider at which proportion of failed iterations a whole condition will be excluded from the analysis. See \textcite{Pawel2024} for more guidance on handling missing values in simulation studies.}
 
 \begin{examplebox}
 We do not expect missing values or non-convergence. If we observe any non-convergence, we exclude the non-converged cases and report the number of non-converged cases per method and condition.
@@ -303,7 +237,7 @@ We do not expect missing values or non-convergence. If we observe any non-conver
 
 \subsection{How do you plan on interpreting the performance measures? \textmd{(optional)}}
 
-\textit{Explanation:} It can be specified what a `relevant difference' in performance, or what `acceptable' and `unacceptable' levels of performance might be to avoid post-hoc interpretation of performance. Furthermore, some researchers use regression models to analyze the results of simulations and compute effect sizes for different factors, or to assess the strength of evidence for the influence of a certain factor \parencite{Skrondal2000, Chipman2022}. If such an approach will be used, please provide as many details as possible on the planned analyses.
+\explanation{It can be specified what a `relevant difference' in performance, or what `acceptable' and `unacceptable' levels of performance might be to avoid post-hoc interpretation of performance. Furthermore, some researchers use regression models to analyze the results of simulations and compute effect sizes for different factors, or to assess the strength of evidence for the influence of a certain factor \parencite{Skrondal2000, Chipman2022}. If such an approach will be used, please provide as many details as possible on the planned analyses.}
 
 \begin{examplebox}
 We define a type I error rate larger than 5\% as non-acceptable performance. Amongst methods that exhibit acceptable performance regarding the type I error rate (within the MCSE), we consider a method X as performing better than a method Y in a certain simulation condition if the lower bound for the estimated power of method X ($\widehat{\text{Pow}}-\text{MCSE}$) is greater than the upper bound for the estimated power of method Y ($\widehat{\text{Pow}}+\text{MCSE}$).
@@ -314,7 +248,7 @@ We define a type I error rate larger than 5\% as non-acceptable performance. Amo
 \section{Other}
 \subsection{Which statistical software/packages do you plan to use?}
 
-\textit{Explanation:} Likely, not all software used can be prespecified before conducting the simulation. However, the main packages used for model fitting are usually known in advance and can be listed here, ideally with version numbers.
+\explanation{Likely, not all software used can be prespecified before conducting the simulation. However, the main packages used for model fitting are usually known in advance and can be listed here, ideally with version numbers.}
 
 \begin{examplebox}
 We will use the following packages of \texttt{R} version 4.3.1 \parencite{R2020} in their most recent versions: The \texttt{mvtnorm} package \parencite{Genz2009} to generate data, the \texttt{lm()} function included in the \texttt{stats} package \parencite{R2020} to fit the different models, the \texttt{SimDesign} package \parencite{Chalmers2020} to set up  and run the simulation study, and the \texttt{ggplot2} package \parencite{Wickham2016} to create visualizations.
@@ -324,7 +258,7 @@ We will use the following packages of \texttt{R} version 4.3.1 \parencite{R2020}
 
 \subsection{Which computational environment do you plan to use?}
 
-\textit{Explanation:} Please specify the operating system and its version which you intend to use. If the study is performed on multiple machines or servers, provide information for each one of them, if possible.
+\explanation{Please specify the operating system and its version which you intend to use. If the study is performed on multiple machines or servers, provide information for each one of them, if possible.}
 
 \begin{examplebox}
 We will run the simulation study on a Windows 11 machine. The complete output of \texttt{sessionInfo()} will be saved and reported in the supplementary materials.
@@ -334,7 +268,7 @@ We will run the simulation study on a Windows 11 machine. The complete output of
 
 \subsection{Which other steps will you undertake to make simulation results reproducible? \textmd{(optional)}}
 
-\textit{Explanation:} This can include sharing the code and full or intermediate results of the simulation in an open online repository. Additionally, this may include supplemental materials or interactive data visualizations, such as a shiny application.
+\explanation{This can include sharing the code and full or intermediate results of the simulation in an open online repository. Additionally, this may include supplemental materials or interactive data visualizations, such as a shiny application.}
 
 \begin{examplebox}
 We will upload the fully reproducible simulation script and a data set containing all relevant estimates, standard errors, and \textit{p}-values for each iteration of the simulation to OSF (\url{https://osf.io/dfgvu/}) and GitHub (\url{https://github.com/bsiepe/SimPsychReview}).
@@ -344,7 +278,7 @@ We will upload the fully reproducible simulation script and a data set containin
 
 \subsection{Is there anything else you want to preregister? \textmd{(optional)}}
 
-\textit{Explanation:} For example, the answer could include the most likely obstacles in the simulation design, and the plans to overcome them.
+\explanation{For example, the answer could include the most likely obstacles in the simulation design, and the plans to overcome them.}
 
 \begin{examplebox}
 No.
@@ -354,6 +288,7 @@ No.
 
 \newpage
 \section*{References}
+\nocite{Siepe2024}
 \printbibliography[heading=none]
 
 \end{document}
