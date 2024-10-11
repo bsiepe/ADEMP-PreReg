@@ -4,9 +4,9 @@
 \input{configurations.tex}
 
 % Optional user settings
-\setboolean{showinstructions}{true} % Change to false to hide instructions
-\setboolean{showexamples}{true} % Change to false to hide examples
-\setboolean{showexplanations}{true} % Change to false to hide explanations
+\setboolean{showinstructions}{true} % set to false to hide instructions
+\setboolean{showexamples}{true} % set to false to hide examples
+\setboolean{showexplanations}{true} % set to false to hide explanations
 
 \begin{document}
 \maketitlepage
@@ -215,7 +215,7 @@ We will report Monte Carlo uncertainty in tables (MCSEs next to the estimated pe
 \explanation{Please also indicate whether the chosen number of simulation repetitions is based on sample size calculations, on computational constraints, rules of thumb, or any other heuristic or combination of these strategies. Formulas for sample size planning in simulation studies are provided in \textcite{Siepe2024}. If there is a lack of knowledge on a quantity for computing the Monte Carlo standard error (MCSE) of an estimated performance measure (e.g., the variance of the estimator is needed to compute the MCSE for the bias), pilot simulations may be needed to obtain a guess for realistic/worst-case values.}
 
 \begin{examplebox}
-We will perform 10,000 repetitions per condition. We determined this number by aiming for a MCSE of 0.005 for the type I error rate and the power under the worst-case performance (50\% rejection rate: $0.50 \times (1 - 0.50) / 0.005^2 = 10{,}000$ repetitions).
+We will perform 10,000 repetitions per condition. We determined this number by aiming for a MCSE of 0.005 for the type I error rate and the power under the ``worst-case'' rejection rate of 50\% in the sense that the MCSE is maximal for a given number of repetitions ($0.50 \times (1 - 0.50) / 0.005^2 = 10{,}000$ repetitions).
 
 For illustration, we also determined the required number of repetitions to achieve a MCSE of 0.005 for the bias for each of the methods. The sample size calculation requires the empirical variance of the effect estimates $S_{\hat{\theta}}^2$ for each method. Since the empirical variances of the effect estimates can vary (pun intended) across simulation conditions, we compute the sample size using the largest estimated variance across all conditions. We obtain the empirical variance estimates for each condition and method using 100 pilot simulation runs. We found that the required sample sizes would be $S_{\hat{\theta}}^2/0.005^2 = 1{,}986$ for ANCOVA, $S_{\hat{\theta}}^2/0.005^2 = 3{,}812$ for change score analysis, and $S_{\hat{\theta}}^2/0.005^2 = 1{,}996$ for post score analysis.
 \end{examplebox}
@@ -227,10 +227,10 @@ For illustration, we also determined the required number of repetitions to achie
 
 \subsection{How will missing values due to non-convergence or other reasons be handled?}
 
-\explanation{`Convergence' means that a method successfully produces the outcomes of interest (e.g., an estimate, a prediction, a \textit{p}-value, a sample size, etc.) that are required for estimating the performance measures. Non-convergence of some iterations or whole conditions of simulation studies occurs regularly, e.g., for numerical reasons. It is possible to impute non-converged iterations, exclude all non-converged iterations or to implement mechanisms that repeat certain parts of the simulation (such as data generation or model fitting) until convergence is achieved. Further, it is important to consider at which proportion of failed iterations a whole condition will be excluded from the analysis. See \textcite{Pawel2024} for more guidance on handling missing values in simulation studies.}
+\explanation{`Convergence' means that a method successfully produces the outcomes of interest (e.g., an estimate, a prediction, a \textit{p}-value, a sample size, etc.) that are required for estimating the performance measures. Non-convergence of some repetitions or whole conditions of simulation studies occurs regularly, e.g., for numerical reasons. It is possible to impute non-converged repetitions, exclude all non-converged repetitions or to implement mechanisms that repeat certain parts of the simulation (such as data generation or model fitting) until convergence is achieved. Further, it is important to consider at which proportion of failed repetitions a whole condition will be excluded from the analysis. See \textcite{Pawel2024} for more guidance on handling missing values in simulation studies.}
 
 \begin{examplebox}
-We do not expect missing values or non-convergence. If we observe any non-convergence, we exclude the non-converged cases and report the number of non-converged cases per method and condition.
+We do not expect missing values or non-convergence. If we observe any non-convergence, we exclude the non-converged cases case-wise (keeping the converged values from the other methods in the same repetition) and report the number of non-converged cases per method and condition.
 \end{examplebox}
 
 \textit{Answer:}
@@ -271,7 +271,7 @@ We will run the simulation study on a Windows 11 machine. The complete output of
 \explanation{This can include sharing the code and full or intermediate results of the simulation in an open online repository. Additionally, this may include supplemental materials or interactive data visualizations, such as a shiny application.}
 
 \begin{examplebox}
-We will upload the fully reproducible simulation script and a data set containing all relevant estimates, standard errors, and \textit{p}-values for each iteration of the simulation to OSF (\url{https://osf.io/dfgvu/}) and GitHub (\url{https://github.com/bsiepe/SimPsychReview}).
+We will upload the fully reproducible simulation script and a data set containing all relevant estimates, standard errors, and \textit{p}-values for each repetition of the simulation to OSF (\url{https://osf.io/dfgvu/}) and GitHub (\url{https://github.com/bsiepe/SimPsychReview}).
 \end{examplebox}
 
 \textit{Answer:}
