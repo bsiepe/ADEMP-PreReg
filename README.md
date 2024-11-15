@@ -15,10 +15,11 @@ After filling out your preferred version of the template, you can upload and tim
 When using the Open Science Framework, you may, for example, upload the template as part of the open-ended OSF registration (see [here](https://osf.io/zab38/wiki/home/)). 
 
 ## Gallery 
-A brief example of a full protocol using ADEMP-PreReg is included in the template itself. We will add further examples to this repository after researchers have used the template.
+A brief example of a full protocol using ADEMP-PreReg is included in the template itself. 
+We are collecting use cases of ADEMP-PreReg in the literature in the [Wiki](https://github.com/bsiepe/ADEMP-PreReg/wiki) of this GitHub repository. Please reach out to us if you have used (parts of) ADEMP-PreReg to preregister or report your simulation study and would like us to add you as an example to the Wiki. 
 
 ## Feedback
-We hope to continuously improve the template and invite interested researchers to suggest improvements to the template. Please feel free to open an Issue or a Pull Request in this repository to voice any questions, criticism, or feedback on the template. If you do not wish to do that, you can also contact us at bjoernsiepe@gmail.com.
+We hope to continuously improve the template and invite interested researchers to suggest improvements to the template. Please feel free to open an Issue or a Pull Request in this repository to voice any questions, criticism, or feedback on the template. If you do not wish to do that, you can also contact us at bjoernsiepe [at] gmail [dot] com.
 
 To modify the template and open a Pull Request, please modify the `ADEMP-PreReg.tex` file. This file can then be converted to `ADEMP-PreReg.docx` by running `make docx` (requires pandoc).
 
