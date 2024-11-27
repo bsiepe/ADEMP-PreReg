@@ -7,7 +7,7 @@ ADEMP-PreReg is a general-purpose preregistration template for Monte Carlo simul
 ## How to use it?
 There are multiple options to use the ADEMP-PreReg template:
 
-1. Use the Google Docs version [here](https://docs.google.com/document/d/1-cpsQYGrgrui6tn7NZKqt9iiZO0teMZkMqWVVxIr3DY/edit?usp=sharing)
+1. Use the Google Docs version [here](https://docs.google.com/document/d/1kZCuDhQxmeN8yBxW6ukWlp4INYYPq3tC/edit?usp=sharing&ouid=109056193406520036545&rtpof=true&sd=true)
 2. Use the .docx version in this repository (`ADEMP-PreReg.docx`)
 3. Use the LaTeX version in this repository (`ADEMP-PreReg.tex` and `configuration.tex`) or on [Overleaf](https://www.overleaf.com/latex/templates/ademp-prereg-simulation-study-template/dkhtxjtmpbfj).
 
