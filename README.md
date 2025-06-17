@@ -1,5 +1,7 @@
 # ADEMP Preregistration
-[![DOI](https://zenodo.org/badge/706519068.svg)](https://zenodo.org/doi/10.5281/zenodo.10057883)
+[![DOI](https://zenodo.org/badge/706519068.svg)](https://zenodo.org/doi/10.5281/zenodo.10057883) [![CC BY 4.0][cc-by-shield]][cc-by]
+
+
 
 This repository contains the ADEMP preregistration (ADEMP-PreReg) template introduced in Siepe et al. (2024, <https://doi.org/10.1037/met0000695>), which is based on the ADEMP reporting structure from Morris et al. (2019, <https://doi.org/10.1002/sim.8086>). Both papers also contain general recommendations for simulation studies. 
 ADEMP-PreReg is a general-purpose preregistration template for Monte Carlo simulation studies which was developed for psychology, but can be used for other quantitative disciplines as well. 
@@ -41,3 +43,12 @@ A BibTeX entry is given by
   journal = {Psychological Methods}
 }
 ```
+## License
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
