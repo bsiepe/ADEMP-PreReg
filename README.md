@@ -19,6 +19,7 @@ When using the Open Science Framework, you may, for example, upload the template
 ## Gallery 
 A brief example of a full protocol using ADEMP-PreReg is included in the template itself. 
 We are collecting use cases of ADEMP-PreReg in the literature in the [Wiki](https://github.com/bsiepe/ADEMP-PreReg/wiki) of this GitHub repository. Please reach out to us if you have used (parts of) ADEMP-PreReg to preregister or report your simulation study and would like us to add you as an example to the Wiki. 
+In the Wiki, we also provide a list of journals that accept Registered Reports for simulation studies. If you know of any additional journals that do so, please let us know. 
 
 ## Feedback
 We hope to continuously improve the template and invite interested researchers to suggest improvements to the template. Please feel free to open an Issue or a Pull Request in this repository to voice any questions, criticism, or feedback on the template. If you do not wish to do that, you can also contact us at bjoernsiepe [at] gmail [dot] com.
